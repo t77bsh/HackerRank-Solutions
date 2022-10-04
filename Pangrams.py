@@ -3,7 +3,4 @@
 
 def pangrams(s):
     alph = 'abcdefghijklmnopqrstuvwxyz'
-    if all(letter in s.lower() for letter in alph):
-        return 'pangram'
-    else:
-        return 'not pangram'
+    return 'pangram' if all(letter in s.lower() for letter in alph) else 'not pangram'
