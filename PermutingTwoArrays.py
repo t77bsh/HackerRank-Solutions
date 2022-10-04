@@ -3,6 +3,6 @@
 # My solution:
 
 def twoArrays(k, A, B):
-    C = [k-b for b in B]
-    ans = [1 for c in C if sum(a >= c for a in A) >= C.count(c)]
-    return 'YES' if sum(ans) == len(B) else 'NO'
+    A.sort()
+    B.sort(reverse=True)
+    return 'YES' if all(a+b >= k for a, b in zip(A, B)) else 'NO'
